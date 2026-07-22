@@ -1,1 +1,135 @@
-{}
+{
+  "Tokio -> China": {
+    "por_ruta": {
+      "NRT-PVG": [
+        {
+          "t": "2026-07-21T22:57-05:00",
+          "price": 167,
+          "date": "2027-04-04"
+        }
+      ],
+      "NRT-PEK": [
+        {
+          "t": "2026-07-21T22:57-05:00",
+          "price": 270,
+          "date": "2027-04-03"
+        }
+      ],
+      "NRT-CAN": [
+        {
+          "t": "2026-07-21T22:57-05:00",
+          "price": 348,
+          "date": "2027-04-04"
+        }
+      ],
+      "NRT-HKG": [
+        {
+          "t": "2026-07-21T22:57-05:00",
+          "price": 219,
+          "date": "2027-04-03"
+        }
+      ],
+      "HND-PVG": [
+        {
+          "t": "2026-07-21T22:57-05:00",
+          "price": 280,
+          "date": "2027-04-03"
+        }
+      ],
+      "HND-PEK": [
+        {
+          "t": "2026-07-21T22:57-05:00",
+          "price": 270,
+          "date": "2027-04-03"
+        }
+      ],
+      "HND-CAN": [
+        {
+          "t": "2026-07-21T22:57-05:00",
+          "price": 348,
+          "date": "2027-04-03"
+        }
+      ],
+      "HND-HKG": [
+        {
+          "t": "2026-07-21T22:57-05:00",
+          "price": 246,
+          "date": "2027-04-03"
+        }
+      ]
+    },
+    "mejor_historico": {
+      "price": 167,
+      "airlines": "Jetstar",
+      "stops": 0,
+      "duracion_min": 205,
+      "origin": "NRT",
+      "dest": "PVG",
+      "date": "2027-04-04",
+      "visto": "2026-07-21T22:57-05:00"
+    }
+  },
+  "China -> Los Angeles": {
+    "por_ruta": {
+      "PVG-LAX": [
+        {
+          "t": "2026-07-21T22:57-05:00",
+          "price": 569,
+          "date": "2027-04-20"
+        }
+      ],
+      "PEK-LAX": [
+        {
+          "t": "2026-07-21T22:57-05:00",
+          "price": 587,
+          "date": "2027-04-19"
+        }
+      ],
+      "CAN-LAX": [
+        {
+          "t": "2026-07-21T22:57-05:00",
+          "price": 560,
+          "date": "2027-04-22"
+        }
+      ],
+      "HKG-LAX": [
+        {
+          "t": "2026-07-21T22:57-05:00",
+          "price": 441,
+          "date": "2027-04-17"
+        }
+      ]
+    },
+    "mejor_historico": {
+      "price": 441,
+      "airlines": "China Airlines",
+      "stops": 1,
+      "duracion_min": 835,
+      "origin": "HKG",
+      "dest": "LAX",
+      "date": "2027-04-17",
+      "visto": "2026-07-21T22:57-05:00"
+    }
+  },
+  "Los Angeles -> Panama (Tocumen)": {
+    "por_ruta": {
+      "LAX-PTY": [
+        {
+          "t": "2026-07-21T22:57-05:00",
+          "price": 495,
+          "date": "2027-04-18"
+        }
+      ]
+    },
+    "mejor_historico": {
+      "price": 495,
+      "airlines": "Avianca",
+      "stops": 1,
+      "duracion_min": 420,
+      "origin": "LAX",
+      "dest": "PTY",
+      "date": "2027-04-18",
+      "visto": "2026-07-21T22:57-05:00"
+    }
+  }
+}
