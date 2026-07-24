@@ -2,8 +2,15 @@ name: Flight Hunter
 
 on:
   schedule:
-    - cron: "0 */6 * * *"
+    # Cada 6 horas. Se usan minutos "17" en vez de "0" porque GitHub encola
+    # (y a veces descarta) los crons que caen en punto por saturacion.
+    - cron: "17 1,7,13,19 * * *"
   workflow_dispatch:
+    inputs:
+      forzar_resumen:
+        description: "Enviar resumen a Telegram aunque ya se haya enviado hoy"
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -15,27 +22,24 @@ concurrency:
 jobs:
   hunt:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 30
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
       - name: Instalar dependencias
         run: pip install -r requirements.txt
 
-      - name: Marcar resumen diario (00 UTC = 19h Panama)
-        run: |
-          if [ "$(date -u +%H)" = "00" ]; then echo "SEND_SUMMARY=1" >> $GITHUB_ENV; fi
-
       - name: Ejecutar Flight Hunter
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          SEND_SUMMARY: ${{ inputs.forzar_resumen && '1' || '0' }}
         run: python hunter.py
 
       - name: Guardar historial de precios
