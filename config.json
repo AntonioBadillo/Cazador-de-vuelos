@@ -1,39 +1,63 @@
 {
   "_comentario": "Edita SOLO este archivo. Fechas AAAA-MM-DD.",
-
   "moneda": "USD",
   "pasajeros_adultos": 1,
   "clase": "economy",
   "flex_days": 3,
-
   "max_escalas": 2,
   "max_horas_viaje": 30,
-
   "baja_pct_alerta": 12,
-  "min_lecturas_base": 4,
+  "min_lecturas_base": 3,
   "cooldown_alerta_horas": 12,
   "pausa_seg": 1.2,
-
   "tramos": [
     {
       "nombre": "Tokio -> China",
-      "origen": ["NRT", "HND"],
-      "destino": ["PVG", "PEK", "CAN", "HKG"],
-      "fechas": ["2027-04-03", "2027-04-04"],
+      "origen": [
+        "NRT",
+        "HND"
+      ],
+      "destino": [
+        "PVG",
+        "PEK",
+        "CAN",
+        "HKG"
+      ],
+      "fechas": [
+        "2027-04-03",
+        "2027-04-04"
+      ],
       "umbral_precio": null
     },
     {
       "nombre": "China -> Los Angeles",
-      "origen": ["PVG", "PEK", "CAN", "HKG"],
-      "destino": ["LAX"],
-      "rango_fechas": { "desde": "2027-04-17", "hasta": "2027-04-23" },
+      "origen": [
+        "PVG",
+        "PEK",
+        "CAN",
+        "HKG"
+      ],
+      "destino": [
+        "LAX"
+      ],
+      "rango_fechas": {
+        "desde": "2027-04-17",
+        "hasta": "2027-04-23"
+      },
       "umbral_precio": null
     },
     {
       "nombre": "Los Angeles -> Panama (Tocumen)",
-      "origen": ["LAX"],
-      "destino": ["PTY"],
-      "rango_fechas": { "desde": "2027-04-18", "hasta": "2027-04-25" },
+      "origen": [
+        "LAX"
+      ],
+      "destino": [
+        "PTY"
+      ],
+      "rango_fechas": {
+        "desde": "2027-04-18",
+        "hasta": "2027-04-25"
+      },
       "umbral_precio": null
     }
   ]

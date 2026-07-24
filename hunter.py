@@ -353,9 +353,24 @@ def main():
             f"Revisa los logs y prueba actualizar:\n"
             f"<code>pip install -U faster-flights</code>")
 
-    if os.environ.get("SEND_SUMMARY") == "1" and resumen:
-        send_telegram(f"\U0001F4CA <b>Resumen diario</b> ({ahora():%d/%m %H:%M})\n\n"
-                      + "\n".join(resumen))
+    # --- Resumen diario ----------------------------------------------------
+    # Se envia en la PRIMERA corrida de cada dia (sea la hora que sea), o si
+    # se fuerza con SEND_SUMMARY=1. Ya no depende de que el cron caiga en una
+    # hora UTC exacta, que era fragil porque GitHub retrasa los runs.
+    hoy = ahora().strftime("%Y-%m-%d")
+    meta = history.setdefault("_meta", {})
+    forzar = os.environ.get("SEND_SUMMARY") == "1"
+    primera_del_dia = meta.get("ultimo_resumen") != hoy
+
+    if resumen and (forzar or primera_del_dia):
+        cuerpo = "\n".join(resumen)
+        extra = ""
+        if total:
+            extra = f"\n\n<i>{STATS['ok']}/{total} consultas OK</i>"
+        if send_telegram(f"\U0001F4CA <b>Resumen diario</b> "
+                         f"({ahora():%d/%m %H:%M})\n\n{cuerpo}{extra}"):
+            meta["ultimo_resumen"] = hoy
+            save_json(HISTORY, history)
 
     log("Listo.")
 
