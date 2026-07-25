@@ -5,7 +5,7 @@
   "clase": "economy",
   "flex_days": 3,
   "max_escalas": 2,
-  "max_horas_viaje": 30,
+  "max_horas_viaje": 35,
   "baja_pct_alerta": 12,
   "min_lecturas_base": 3,
   "cooldown_alerta_horas": 12,
@@ -21,7 +21,9 @@
         "PVG",
         "PEK",
         "CAN",
-        "HKG"
+        "HKG",
+        "SZX",
+        "CTU"
       ],
       "fechas": [
         "2027-04-03",
@@ -30,35 +32,25 @@
       "umbral_precio": null
     },
     {
-      "nombre": "China -> Los Angeles",
+      "nombre": "China -> Costa Oeste USA",
       "origen": [
         "PVG",
         "PEK",
         "CAN",
-        "HKG"
+        "HKG",
+        "SZX",
+        "CTU"
       ],
       "destino": [
-        "LAX"
+        "LAX",
+        "SFO",
+        "SEA"
       ],
       "rango_fechas": {
         "desde": "2027-04-17",
         "hasta": "2027-04-23"
       },
-      "umbral_precio": null
-    },
-    {
-      "nombre": "Los Angeles -> Panama (Tocumen)",
-      "origen": [
-        "LAX"
-      ],
-      "destino": [
-        "PTY"
-      ],
-      "rango_fechas": {
-        "desde": "2027-04-18",
-        "hasta": "2027-04-25"
-      },
-      "umbral_precio": null
+      "umbral_precio": 380
     }
   ]
 }
